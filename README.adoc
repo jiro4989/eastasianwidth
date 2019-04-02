@@ -3,6 +3,35 @@
 
 = eastasianwidth
 
-eastasianwidth is EastAsianWidth library in pure Nim.
+eastasianwidth is EastAsianWidth library in pure Nim. +
+This module is inspired by eastasianwidth[https://github.com/komagata/eastasianwidth].
 
 WARNING: **This module is developing now.**
+
+== Development
+
+nim -v
+
+  Nim Compiler Version 0.19.4 [Linux: amd64]
+  Compiled at 2019-02-01
+  Copyright (c) 2006-2018 by Andreas Rumpf
+
+  git hash: b6d96cafc8bcad1f3d32f2910b25cd11a93f7751
+  active boot switches: -d:release
+
+
+nimble -v
+
+  nimble v0.9.0 compiled at 2018-10-27 18:10:03
+  git hash: couldn't determine git hash
+
+== Usage
+
+[source,nim]
+----
+import eastasianwidth
+
+echo "hello".stringWidth        # --> 5
+echo "こんにちは".stringWidth   # --> 10
+echo "ＡＢＣＤＥ".stringWidth   # --> 10
+----
