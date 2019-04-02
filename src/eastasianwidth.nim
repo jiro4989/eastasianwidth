@@ -5,9 +5,14 @@
 ## =============
 ##
 ## Text align right with multibyte string.
-## 
-## TODO
 ##
+## .. code-block:: nim
+##    import eastasianwidth
+##
+##    echo "hello".stringWidth        # --> 5
+##    echo "こんにちは".stringWidth   # --> 10
+##    echo "ＡＢＣＤＥ".stringWidth   # --> 10
+#
 ## References:
 ## * https://ja.wikipedia.org/wiki/%E6%9D%B1%E3%82%A2%E3%82%B8%E3%82%A2%E3%81%AE%E6%96%87%E5%AD%97%E5%B9%85
 ## * http://www.unicode.org/Public/UCD/latest/ucd/EastAsianWidth.txt
