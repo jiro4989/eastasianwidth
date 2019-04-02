@@ -278,6 +278,8 @@ proc existsIn(i: int, s: seq[HSlice[int,int]]): bool =
 proc eastAsianWidth*(codePoint: int): EastAsianWidth =
   ## eastAsianWidth returns EastAsianWidth of code point.
   runnableExamples:
+    from unicode import runeAtPos
+
     doAssert 0x3000.eastAsianWidth == fullWidth
     doAssert "　".runeAtPos(0).int.eastAsianWidth == fullWidth
   if codePoint.existsIn fullWidthRange:
