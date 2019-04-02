@@ -5,3 +5,4 @@
 
 eastasianwidth is EastAsianWidth library in pure Nim.
 
+WARNING: **This module is developing now.**
