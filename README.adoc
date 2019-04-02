@@ -1,0 +1,7 @@
+:toc:
+:sectnums:
+
+= eastasianwidth
+
+eastasianwidth is EastAsianWidth library in pure Nim.
+
