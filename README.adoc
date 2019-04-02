@@ -4,7 +4,7 @@
 = eastasianwidth
 
 eastasianwidth is EastAsianWidth library in pure Nim. +
-This module is inspired by eastasianwidth[https://github.com/komagata/eastasianwidth].
+This module is inspired by https://github.com/komagata/eastasianwidth[eastasianwidth].
 
 WARNING: **This module is developing now.**
 
