@@ -30,8 +30,10 @@ nimble -v
 [source,nim]
 ----
 import eastasianwidth
+from unicode import runeAtPos
 
-echo "hello".stringWidth        # --> 5
-echo "こんにちは".stringWidth   # --> 10
-echo "ＡＢＣＤＥ".stringWidth   # --> 10
+echo "hello".stringWidth                  # --> 5
+echo "こんにちは".stringWidth             # --> 10
+echo "ＡＢＣＤＥ".stringWidth             # --> 10
+echo "漢".runeAtPos(0).int.eastAsianWidth # --> W
 ----
