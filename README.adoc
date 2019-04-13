@@ -10,8 +10,6 @@ image:https://travis-ci.org/jiro4989/eastasianwidth.svg?branch=master["Build Sta
 
 https://jiro4989.github.io/eastasianwidth/doc/html/eastasianwidth.html[Document]
 
-WARNING: **This module is developing now.**
-
 == Development
 
 nim -v
