@@ -7,4 +7,5 @@ script:
   - docker run nimlang/nim nim --version
   - docker run -v "$(pwd):/project" -w /project nimlang/nim sh -c "nimble test"
   - docker run -v "$(pwd):/project" -w /project nimlang/nim sh -c "nimble docs"
+  - docker run -v "$(pwd):/project" -w /project nimlang/nim sh -c "nim c -r examples/table.nim"
 #  - docker run -v "$(pwd):/project" -w /project nimlang/nim sh -c "find src/ -name '*.nim' -type f -exec nim doc {} \;"
