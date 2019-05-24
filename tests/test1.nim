@@ -37,6 +37,13 @@ suite "eastAsianWidth":
   test "neutral":
     check "ب".runeAtPos(0).int.eastAsianWidth == neutral
     check "ف".runeAtPos(0).int.eastAsianWidth == neutral
+  test "emoji":
+    check "☀".runeAtPos(0).int.eastAsianWidth == neutral
+    check "☁".runeAtPos(0).int.eastAsianWidth == neutral
+    check "☂".runeAtPos(0).int.eastAsianWidth == neutral
+    check "☃".runeAtPos(0).int.eastAsianWidth == neutral
+    check "🧀".runeAtPos(0).int.eastAsianWidth == neutral
+    check "💩".runeAtPos(0).int.eastAsianWidth == neutral
 
 suite "stringWidth":
   test "0 value":
@@ -50,3 +57,7 @@ suite "stringWidth":
     check "あいうえお".stringWidth == 10
     check "月火水木金".stringWidth == 10
     check "　 ".stringWidth == 3
+  test "Emoji":
+    check "☀☁☂☃".stringWidth == 8
+    check "🧀".stringWidth == 2
+    check "💩".stringWidth == 2

@@ -274,6 +274,11 @@ let ambiguousWidthRange = @[
   0x100000..0x10FFFD,
 ]
 
+let emojis = @[
+  0x2600..0x26FF,
+  0x1F000..0x1FFFF,
+]
+
 proc existsIn(i: int, s: seq[HSlice[int,int]]): bool =
   for r in s:
     if i in r:
@@ -284,9 +289,9 @@ proc eastAsianWidth*(codePoint: int): EastAsianWidth =
   ## eastAsianWidth returns EastAsianWidth of code point.
   runnableExamples:
     from unicode import runeAtPos
-
     doAssert 0x3000.eastAsianWidth == fullWidth
     doAssert "　".runeAtPos(0).int.eastAsianWidth == fullWidth
+
   if codePoint.existsIn fullWidthRange:
     return fullWidth
   if codePoint.existsIn halfWidthRange:
@@ -310,7 +315,13 @@ proc stringWidth*(s: string): int =
     doAssert "".stringWidth == 0
     doAssert "abcde".stringWidth == 5
     doAssert "あいうえお".stringWidth == 10
+
   let runes = s.toRunes
   if runes.len < 1:
     return 0
-  result = runes.mapIt(it.int.eastAsianWidth.runeLen).foldr(a + b)
+  for r in runes:
+    let i = r.int
+    if i.existsIn emojis:
+      result += 2
+      continue
+    result += i.eastAsianWidth.runeLen
