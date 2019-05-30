@@ -47,3 +47,7 @@ echo "漢".runeAtPos(0).int.eastAsianWidth # --> W
 
 * https://jiro4989.github.io/eastasianwidth/eastasianwidth.html
 
+== Links
+
+* https://github.com/jiro4989/alignment[alignment] is a library to align text
+  that contains multibyte strings. alignment library uses eastasianwidth.
